@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argocd-test
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: rbac.authorization.k8s.io
+    kind: ClusterRoleBinding
+  - group: apiextensions.k8s.io
+    kind: CustomResourceDefinition
+  description: test
+  destinations:
+  - namespace: test
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - git@github.com:influxdata/k8s-idpe.git
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app-test
+  namespace: argocd
+spec:
+  destination:
+    namespace: test
+    server: https://kubernetes.default.svc
+  project: argocd-test
+  source:
+    path: argocd/app-test
+    repoURL: git@github.com:wojciechka/argocd-tests.git
+    targetRevision: HEAD
