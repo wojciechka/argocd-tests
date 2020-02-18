@@ -4,7 +4,7 @@ metadata:
   generateName: slack-notification-
   namespace: test
   annotations:
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook: SyncFail
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   backoffLimit: 5
@@ -18,10 +18,8 @@ spec:
         env:
           - name: SLACK_TITLE
             value: 'ArgoCD test notification'
-          - name: SLACK_CHANNEL
-            value: 'team-deployments'
           - name: SLACK_MESSAGE
-            value: 'Test from Kubernetes job'
+            value: 'NOOOO, THE JOB HAS FAILED. WE ARE DOOMED!!!!!!'
         envFrom:
           - secretRef:
               name: slacksecret
