@@ -13,4 +13,5 @@ spec:
   selector:
     app: nginx-deployment
   sessionAffinity: None
-  type: ClusterIP
+  type: LoadBalancer
+
