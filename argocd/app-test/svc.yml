@@ -13,4 +13,4 @@ spec:
   selector:
     app: nginx-deployment
   sessionAffinity: None
-  type: InvalidType
+  type: ClusterIP
