@@ -15,7 +15,7 @@ spec:
   - namespace: test
     server: https://kubernetes.default.svc
   sourceRepos:
-  - git@github.com:influxdata/k8s-idpe.git
+  - https://github.com/wojciechka/argocd-tests.git
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
