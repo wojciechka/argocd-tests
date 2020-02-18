@@ -29,5 +29,9 @@ spec:
   project: argocd-test
   source:
     path: argocd/app-test
-    repoURL: git@github.com:wojciechka/argocd-tests.git
+    repoURL: https://github.com/wojciechka/argocd-tests.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
