@@ -6,6 +6,6 @@ metadata:
   name: testitem1
   namespace: test
 spec:
-  data: SomeData
-  otherData: SomeOtherData
+  data: SomeData 02
+  otherData: SomeOtherData 02
 
