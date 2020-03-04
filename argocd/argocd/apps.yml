@@ -20,7 +20,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-app-test
+  name: argocd-crd-test
   namespace: argocd
 spec:
   destination:
@@ -28,7 +28,7 @@ spec:
     server: https://kubernetes.default.svc
   project: argocd-test
   source:
-    path: argocd/app-test
+    path: argocd/crd-test
     repoURL: https://github.com/wojciechka/argocd-tests.git
     targetRevision: HEAD
   syncPolicy:

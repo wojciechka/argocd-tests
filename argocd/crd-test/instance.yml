@@ -1,0 +1,11 @@
+apiVersion: k8s.kocjan.org/v1alpha1
+kind: TestItem
+metadata:
+  labels:
+    component: testitem1
+  name: testitem1
+  namespace: test
+spec:
+  data: SomeData
+  otherData: SomeOtherData
+
